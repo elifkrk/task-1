@@ -1,14 +1,47 @@
-package com.task.one.hibernater.entegration.com.task.one.hibernater.entegration.dto;
+package com.task.one.hibernate.entegration.entities;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customer")
 public class Customer {
+    @Id
+    @Column(name="customer_number")
     private String customerNumber;
+    
+    @Column(name="corporation_name")
     private String corporationName;
+    
+    @Column(name="customer_type")
     private String customerType;
+    
+    @Column(name="is_wage_customer")
     private String isWageCustomer;
+    
+    @Column(name="name")
     private String name;
+    
+    @Column(name="surname")
     private String surname;
+    
+    @Column(name="tckn")
     private String tckn;
+    
+    @Column(name="vkn")
     private String vkn ;
+    
+    
+    @Column(name="last_modify_date")
+    private Date lastModifyDate;
+    
+    @Column(name="created_date")
+    private Date createdDate;
+    
     public String getCustomerNumber() {
         return customerNumber;
     }
@@ -56,6 +89,18 @@ public class Customer {
     }
     public void setVkn(String vkn) {
         this.vkn = vkn;   
+    }
+    public Date getLastModifyDate() {
+        return lastModifyDate;
+    }
+    public void setLastModifyDate(Date lastModifyDate) {
+        this.lastModifyDate = lastModifyDate;
+    }
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     } 
     
 

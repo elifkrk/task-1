@@ -1,17 +1,45 @@
-package com.task.one.hibernater.entegration.com.task.one.hibernater.entegration.dto;
+package com.task.one.hibernate.entegration.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="account")
 public class Account {
     
+    @Id
+    @Column(name="account_number")
     private String accountNumber;
+    
+    @Column(name="created_date")
     private Date createdDate;
+    
+    @Column(name="customer_number")
     private String customerNumber;
+
+    @Column(name="iban")
     private String iban;
+    
+  
+    @Column(name="is_blocked")
     private String isBlocked;
+    
+  
+    @Column(name="last_modify_date")
     private Date lastModifyDate;
+    
+    
+    @Column(name="status")
     private String status;
+    
+
+   
+    @Column(name="total_amount")
     private BigDecimal totalAmount;
     
     public String getAccountNumber() {

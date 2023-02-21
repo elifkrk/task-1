@@ -1,13 +1,41 @@
-package com.task.one.hibernater.entegration.com.task.one.hibernater.entegration.dto;
+package com.task.one.hibernate.entegration.entities;
 
 import java.util.Date;
 
-public class Address {    
-    private String address;               ; 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Generated;
+
+@Entity
+@Table(name="address")
+public class Address { 
+    
+   
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
+ 
+    @Column(name = "address")
+    private String address;               
+    
+    @Column(name = "country_code")
     private String countryCode; 
+    
+    @Column(name = "created_date")
     private Date createdDate; 
+    
+    @Column(name = "customer_number")
     private String customerNumber; 
+    
+    @Column(name = "last_modify_date")
     private Date lastModifyDate;
+    
     public String getAddress() {
         return address;
     }
@@ -37,6 +65,12 @@ public class Address {
     }
     public void setLastModifyDate(Date lastModifyDate) {
         this.lastModifyDate = lastModifyDate;
+    }
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
     }   
     
 

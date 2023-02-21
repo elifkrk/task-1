@@ -1,25 +1,60 @@
-package com.task.one.hibernater.entegration.com.task.one.hibernater.entegration.dto;
+package com.task.one.hibernate.entegration.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "account_transaction")
 public class AccountTransaction {
 
-    private String accountNumber                               ;
-    private    String transactionType;
-    private    BigDecimal costAmount;
-    private    String destinationAccountNumber;
-    private    String destinationBankCode;
-    private    String destinationCreditCardNumber;
-    private    String destinationIban;
-    private    Date lastModifyDate;
-    private    BigDecimal outgoingAmount;
-    private    BigDecimal taxAmount;
-    private    BigDecimal totalAmount;
-    private    Date transactionDate;
-    private    int transactionNo;
-    private    int transactionQueryNo;
+    @Id
+    @Column(name = "account_number")
+    private String accountNumber ;
+    
+    @Column(name = "transaction_type")
+    private String transactionType;
+    
+    @Column(name = "cost_amount")
+    private BigDecimal costAmount;
+    
+    @Column(name = "destination_account_number")
+    private  String destinationAccountNumber;
+    
+    @Column(name = "destination_bank_code")
+    private String destinationBankCode;
+    
+    @Column(name = "destination_credit_card_number")
+    private String destinationCreditCardNumber;
+    
+    @Column(name = "destination_iban")
+    private String destinationIban;
+    
+    @Column(name = "last_modify_date")
+    private  Date lastModifyDate;
+    
+    @Column(name = "outgoing_amount")
+    private BigDecimal outgoingAmount;
+    
+    @Column(name = "tax_amount")
+    private BigDecimal taxAmount;
+    
+    @Column(name = "total_amount")
+    private BigDecimal totalAmount;
+    
+    @Column(name = "transaction_date")
+    private Date transactionDate;
+    
+    @Column(name = "transaction_no")
+    private String transactionNo;
+    
+    @Column(name = "transaction_query_no")
+    private int transactionQueryNo;
+    
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -92,10 +127,10 @@ public class AccountTransaction {
     public void setTransactionDate(Date transactionDate) {
         this.transactionDate = transactionDate;
     }
-    public int getTransactionNo() {
+    public String getTransactionNo() {
         return transactionNo;
     }
-    public void setTransactionNo(int transactionNo) {
+    public void setTransactionNo(String transactionNo) {
         this.transactionNo = transactionNo;
     }
     public int getTransactionQueryNo() {
