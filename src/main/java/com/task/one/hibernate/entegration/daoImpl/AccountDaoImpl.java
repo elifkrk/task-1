@@ -7,7 +7,7 @@ import com.task.one.hibernate.entegration.dao.IAccountDao;
 import com.task.one.hibernate.entegration.entities.Account;
 import com.task.one.hibernate.entegration.util.HibernateUtil;
 
-public class AccountDaoImpl {
+public class AccountDaoImpl implements IAccountDao{
 
     public void addAccount(Account account) {
 	// TODO Auto-generated method stub

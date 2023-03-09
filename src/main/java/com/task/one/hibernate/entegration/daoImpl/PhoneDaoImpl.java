@@ -3,43 +3,42 @@ package com.task.one.hibernate.entegration.daoImpl;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import com.task.one.hibernate.entegration.dao.IPhoneDao;
 import com.task.one.hibernate.entegration.entities.Phone;
 import com.task.one.hibernate.entegration.util.HibernateUtil;
 
-public class PhoneDaoImpl {
+public class PhoneDaoImpl implements IPhoneDao {
 
-    public void addPhone(Phone Phone) {
+    public void addPhone(Phone phone) {
  	// TODO Auto-generated method stub
-	      Session session = HibernateUtil.getSessionFactory().openSession();
+	Session session = HibernateUtil.getSessionFactory().openSession();
 
  	try {
  		session.beginTransaction();
  		
- 		Integer id =(Integer)session.save(Phone);
+ 		Integer id =(Integer)session.save(phone);
  		System.out.println("Phone is created  with Id::"+id);
  		session.getTransaction().commit();
  	} catch (HibernateException e) {
  	    session.getTransaction().rollback();
- 		e.printStackTrace();
+ 	    e.printStackTrace();
  	}
  	
      }
 
      public Phone fetchPhonebyNo(String phoneNumber) {
  	// TODO Auto-generated method stub
- 	Phone Phone = null;
-	        Session session = HibernateUtil.getSessionFactory().openSession();
+ 	Phone phone = null;
+	Session session = HibernateUtil.getSessionFactory().openSession();
 
  	try {
- 	        Phone = session.get(Phone.class, phoneNumber );
- 		if(Phone != null){
- 		 return Phone;
+ 	        phone = session.get(Phone.class, phoneNumber );
+ 		if(phone != null){
+ 		 return phone;
  		}else{
  			System.out.println("Phone doesn't exist with provideded Id..");
  		}
  	} catch (HibernateException e) {
- 	    session.getTransaction().rollback();
-
  		e.printStackTrace();
  	}
  	return null;
@@ -49,7 +48,7 @@ public class PhoneDaoImpl {
 
      public void updatePhoneByNo(String phoneNumber) {
  	// TODO Auto-generated method stub
-	        Session session = HibernateUtil.getSessionFactory().openSession();	    
+	Session session = HibernateUtil.getSessionFactory().openSession();	    
 
  	try { 
  		Phone phone = session.get(Phone.class, phoneNumber);
@@ -64,8 +63,7 @@ public class PhoneDaoImpl {
  		
  	} catch (HibernateException e) {
  	    session.getTransaction().rollback();
-
- 		e.printStackTrace();
+            e.printStackTrace();
  		
  	}
  	
@@ -73,7 +71,7 @@ public class PhoneDaoImpl {
 
      public void deletePhoneByNo(String phoneNumber) {
  	// TODO Auto-generated method stub
-	     	Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
  	try {   
  		Phone phone = session.get(Phone.class, phoneNumber);
@@ -87,8 +85,10 @@ public class PhoneDaoImpl {
  		}
  	} catch (HibernateException e) {
  	    session.getTransaction().rollback();
- 		e.printStackTrace();
+ 	    e.printStackTrace();
  	}
  	
      }
+
+
 }

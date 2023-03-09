@@ -27,6 +27,8 @@
         <mapping class="com.task.one.hibernate.entegration.entities.AccountTransaction"/> 
         <mapping class="com.task.one.hibernate.entegration.entities.Phone"/> 
         <mapping class="com.task.one.hibernate.entegration.entities.Address"/> 
+        <mapping class="com.task.one.hibernate.entegration.entities.Command"/> 
+        
         
         
     </session-factory>

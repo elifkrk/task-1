@@ -3,10 +3,11 @@ package com.task.one.hibernate.entegration.daoImpl;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import com.task.one.hibernate.entegration.dao.ICustomerDao;
 import com.task.one.hibernate.entegration.entities.Customer;
 import com.task.one.hibernate.entegration.util.HibernateUtil;
 
-public class CustomerDaoImpl {
+public class CustomerDaoImpl implements ICustomerDao {
 
 
     public void addCustomer(Customer Customer) {

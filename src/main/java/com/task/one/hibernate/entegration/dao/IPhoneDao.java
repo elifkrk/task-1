@@ -5,7 +5,7 @@ import com.task.one.hibernate.entegration.entities.Phone;
 public interface IPhoneDao {
 
     	public abstract void addPhone(Phone phone);
-	public abstract Phone  fetchPhonebyId(int id);
-	public abstract void updatePhoneById(int phoneNo);
-	public abstract void  deletePhoneById(Integer phoneNo);
+	public abstract Phone  fetchPhonebyNo(String phoneNo);
+	public abstract void updatePhoneByNo(String phoneNo);
+	public abstract void  deletePhoneByNo(String phoneNo);
 }
